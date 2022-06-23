@@ -5,6 +5,10 @@
         <title>Study Django</title>
     </head>
     <body>
-        {{ welcome_msg }}
-    </body>
+        {{ user.username }} <br>
+        {{ user.email}} <br>
+        {% for i in params %}
+        {{i}}<br>
+        {% endfor %}
+   </body>
 </html>
