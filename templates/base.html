@@ -5,10 +5,12 @@
         <title>Study Django</title>
     </head>
     <body>
-        {{ user.username }} <br>
+        {{ user }} <br>
         {{ user.email}} <br>
         {% for i in params %}
         {{i}}<br>
         {% endfor %}
+        {% if user == 'abc' %}
+        {% endif %}
    </body>
 </html>
