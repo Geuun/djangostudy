@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8" />
         <title>Study Django</title>
     </head>
     <body>
-        {{ user }} <br>
-        {{ user.email}} <br>
-        {% for i in params %}
-        {{i}}<br>
+        {{ user }}<br />
+        {% for i in params %} {{i}}<br />
         {% endfor %}
-        {% if user == 'abc' %}
+        {% if user.is_authenticated %}
+        <p><a href="{% url 'logout' %}">로그아웃</a></p>
+        {% else %}
+        <p><a href="{% url 'register' %}">회원가입</a></p>
+        <p><a href="{% url 'login' %}">로그인</a></p>
         {% endif %}
    </body>
 </html>
