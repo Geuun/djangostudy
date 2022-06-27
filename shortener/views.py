@@ -50,7 +50,7 @@ def register(request):
             user = authenticate(username = username, password = raw_password)
             login(request, user)
             msg = '회원가입 완료'
-        return render(request, 'base.html', {'form': form, 'msg': msg})
+        return render(request, 'register.html', {'form': form, 'msg': msg})
     else:
         form = RegisterForm()
     return render(request, 'register.html', {'form' : form})
@@ -67,7 +67,7 @@ def login_view(request):
             if user is not None:
                 msg = '로그인 성공'
                 login(request, user)
-        return render(request, 'base.html', {'form': form, 'msg': msg})
+        return render(request, 'login.html', {'form': form, 'msg': msg})
     else:
         form = AuthenticationForm()
         return render(request, 'login.html', {'form': form})
