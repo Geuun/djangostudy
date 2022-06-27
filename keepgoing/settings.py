@@ -68,7 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'django_toolbar.middleware.DebugToolbarMiddleware', # Django Debug Toolbar
+    'debug_toolbar.middleware.DebugToolbarMiddleware', # Django Debug Toolbar
 ]
 
 ROOT_URLCONF = 'keepgoing.urls'
