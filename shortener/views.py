@@ -5,9 +5,11 @@ from shortener.models import Users
 
 # Create your views here.
 def index(request):
-    user = Users.objects.filter(username='admin').first()
+    print(request.user.pay_plan.name)
+    user = Users.objects.filter(username='geun').first()
     # user = User.object.get(username='admin')
     email = user.email if user else 'Anomymous User!'
+    print('Logged in?', request.user.is_authenticated)
     if request.user.is_authenticated is False:
         email = "Anonymous User!"
     print(email)
